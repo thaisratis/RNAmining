@@ -16,7 +16,7 @@
 
 ## Infrastructure
 
-![Infrastructure metavolcano](build/infra-metavolcano.jpeg)
+![Infrastructure metavolcano](build/images/infra-metavolcano.jpeg)
 
 ## Requisites
 
