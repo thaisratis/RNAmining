@@ -6,7 +6,7 @@ services:
         build: ./build/nginx
         container_name: metavolcano_webserver
         volumes:
-            - ./volumes/metavolcano-front:/var/www/html
+            - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
         depends_on:
              - php_metavolcano
         networks:
@@ -18,7 +18,8 @@ services:
         build: ./build/php
         container_name: metavolcano_php
         volumes:
-            - ./volumes/metavolcano-front:/var/www/html
+            - ./.git/modules/volumes/metavolcano-front:/var/.git/modules/volumes/metavolcano-front
+            - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
         networks:
              - php
         restart: always
