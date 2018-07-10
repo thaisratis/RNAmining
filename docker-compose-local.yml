@@ -1,0 +1,30 @@
+version: "3.4"
+
+services:
+
+    nginx_metavolcano:
+        build: ./build/nginx
+        container_name: metavolcano_webserver
+        ports:
+            - "80:80"
+        volumes:
+            - ./volumes/metavolcano-front:/var/www/html
+        depends_on:
+             - php_metavolcano
+        networks:
+            - webserver
+            - php
+        restart: always
+
+    php_metavolcano:
+        build: ./build/php
+        container_name: metavolcano_php
+        volumes:
+            - ./volumes/metavolcano-front:/var/www/html
+        networks:
+             - php
+        restart: always
+
+networks:
+    webserver:
+    php:

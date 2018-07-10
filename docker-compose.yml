@@ -1,0 +1,28 @@
+version: "3.4"
+
+services:
+
+    nginx_mdp:
+        build: ./build/nginx
+        container_name: mdp_webserver
+        restart: always
+        volumes:
+            - ./volumes/metavolcano-front:/var/www/html
+        depends_on:
+             - php_mdp
+        networks:
+            - webserver
+            - php
+
+    php_mdp:
+        build: ./build/php
+        container_name: mdp_php
+        restart: always
+        volumes:
+            - ./volumes/metavolcano-front:/var/www/html
+        networks:
+             - php
+
+networks:
+    webserver:
+    php:
