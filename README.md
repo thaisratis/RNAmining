@@ -20,7 +20,7 @@
 
 ## Requisites
 
-- Git
+- Git version 2 or above
 - Docker version 17.09.1-ce or above (https://docs.docker.com/install/)
 - Docker Compose 1.20.1 or above (https://docs.docker.com/compose/install)
 
