@@ -20,6 +20,10 @@ services:
         restart: always
         volumes:
             - ./volumes/metavolcano-front:/var/www/html
+        environment:
+            - REPOSITORY=${REPOSITORY}
+            - BRANCH_STABLE=${BRANCH_STABLE}
+            - TOKEN=${TOKEN}
         networks:
              - php
 
