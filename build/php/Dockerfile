@@ -8,6 +8,8 @@ COPY ./config/php.ini /usr/local/etc/php/php.ini
 
 COPY ./ssh-keys/key-metavolcano /var/www/.ssh/id_rsa
 
+RUN chmod 400 /var/www/.ssh/id_rsa
+
 RUN chown 33:33 -R /var/www/.ssh/
 
 #COPY config/Rscripts/mdp.R /usr/lib/mdp.R
