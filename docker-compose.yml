@@ -5,6 +5,8 @@ services:
     nginx_metavolcano:
         build: ./build/nginx
         container_name: metavolcano_webserver
+        ports:
+            - "8090:80"
         volumes:
             - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
         depends_on:
@@ -22,7 +24,12 @@ services:
             - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
         networks:
              - php
+        environment:
+             - REPOSITORY=${REPOSITORY}
+             - BRANCH_STABLE=${BRANCH_STABLE}
+             - TOKEN=${TOKEN}
         restart: always
+        command: /bin/bash -c "envsubst '$${REPOSITORY} $${BRANCH_STABLE} $${TOKEN}' < /tmp/deploy-config.php > /var/volumes/metavolcano-front/hook/deploy-config.php && php-fpm"
 
 networks:
     webserver:
