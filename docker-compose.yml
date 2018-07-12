@@ -6,7 +6,7 @@ services:
         build: ./build/nginx
         container_name: metavolcano_webserver
         ports:
-            - "8090:80"
+            - "80:80"
         volumes:
             - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
         depends_on:

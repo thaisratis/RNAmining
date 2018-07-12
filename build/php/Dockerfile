@@ -12,17 +12,18 @@ RUN chmod 400 /var/www/.ssh/id_rsa
 
 RUN chown 33:33 -R /var/www/.ssh/
 
-#COPY config/Rscripts/mdp.R /usr/lib/mdp.R
+COPY ./config/Rscripts/metavolcano_source.R /usr/lib/metavolcano_source.R
 
-#COPY config/Rscripts/install_mdp.R /install_mdp.R
+COPY ./config/Rscripts/install_prereq.R /install_prereq.R
 
 RUN apt-get update \
-    && apt-get install -y vim git gettext
-#    && apt-get install -y r-base-core pandoc \
-#    libcurl4-openssl-dev libssl-dev \
-#    && Rscript /install_mdp.R
+    && apt-get install -y vim git gettext \
+			  r-base-core pandoc \ 
+                          libcurl4-openssl-dev libssl-dev
+
+RUN Rscript /install_prereq.R
 
 # ZIP
-#RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip
 
 RUN ssh-keyscan gitlab.com > /var/www/.ssh/known_hosts
