@@ -10,7 +10,7 @@ services:
         depends_on:
              - php_metavolcano
         networks:
-            - webserver
+            - gatewayapps_proxy
             - php
         restart: always
 
@@ -30,5 +30,6 @@ services:
         command: /bin/bash -c "envsubst '$${REPOSITORY} $${BRANCH_STABLE} $${TOKEN}' < /tmp/deploy-config.php > /var/volumes/metavolcano-front/hook/deploy-config.php && php-fpm"
 
 networks:
-    webserver:
     php:
+    gatewayapps_proxy:
+        external: true
