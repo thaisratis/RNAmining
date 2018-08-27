@@ -4,13 +4,15 @@ services:
 
     nginx_metavolcano:
         build: ./build/nginx
+        ports:
+            - "80:80"
         container_name: metavolcano_webserver
         volumes:
-            - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
+            - ./volumes/metavolcano-front:${DOCUMENT_ROOT}
         depends_on:
              - php_metavolcano
         networks:
-            - gatewayapps_proxy
+                #- gatewayapps_proxy
             - php
         restart: always
 
@@ -18,8 +20,8 @@ services:
         build: ./build/php
         container_name: metavolcano_php
         volumes:
-            - ./.git/modules/volumes/metavolcano-front:/var/.git/modules/volumes/metavolcano-front
-            - ./volumes/metavolcano-front:/var/volumes/metavolcano-front
+                #            - ./.git/modules/volumes/metavolcano-front:/var/.git/modules/volumes/metavolcano-front
+            - ./volumes/metavolcano-front:${DOCUMENT_ROOT}
         networks:
              - php
         environment:
@@ -27,9 +29,9 @@ services:
              - BRANCH_STABLE=${BRANCH_STABLE}
              - TOKEN=${TOKEN}
         restart: always
-        command: /bin/bash -c "envsubst '$${REPOSITORY} $${BRANCH_STABLE} $${TOKEN}' < /tmp/deploy-config.php > /var/volumes/metavolcano-front/hook/deploy-config.php && php-fpm"
+        #command: /bin/bash -c "envsubst '$${REPOSITORY} $${BRANCH_STABLE} $${TOKEN}' < /tmp/deploy-config.php > /var/volumes/metavolcano-front/hook/deploy-config.php && php-fpm"
 
 networks:
     php:
-    gatewayapps_proxy:
-        external: true
+            #gatewayapps_proxy:
+            #external: true
