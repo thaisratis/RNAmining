@@ -19,7 +19,7 @@ COPY ./config/Rscripts/install_prereq.R /install_prereq.R
 RUN apt-get update \
     && apt-get install -y vim git gettext \
 			  r-base-core pandoc \ 
-                          libcurl4-openssl-dev libssl-dev
+                          libcurl4-openssl-dev libssl-dev procps
 
 RUN Rscript /install_prereq.R
 
