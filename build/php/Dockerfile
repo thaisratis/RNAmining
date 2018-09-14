@@ -12,8 +12,6 @@ RUN chmod 400 /var/www/.ssh/id_rsa
 
 RUN chown 33:33 -R /var/www/.ssh/
 
-COPY ./config/Rscripts/metavolcano_source.R /usr/lib/metavolcano_source.R
-
 COPY ./config/Rscripts/install_prereq.R /install_prereq.R
 
 RUN apt-get update \
