@@ -16,10 +16,26 @@ COPY ./config/Rscripts/install_prereq.R /install_prereq.R
 
 RUN apt-get update \
     && apt-get install -y vim git gettext \
-			  r-base-core pandoc \ 
+			  r-base-core wget \ 
                           libcurl4-openssl-dev libssl-dev procps
 
 RUN Rscript /install_prereq.R
+
+RUN cd /usr/local/src/
+
+RUN git clone https://github.com/jgm/pandoc
+
+RUN cd pandoc
+
+RUN git submodule update --init
+
+RUN curl -sSL https://get.haskellstack.org/ | sh
+
+RUN /usr/local/bin/stack setup
+
+RUN /usr/local/bin/stack install
+
+RUN mv /root/.local/bin/pandoc /usr/local/bin/
 
 # ZIP
 RUN docker-php-ext-install zip
