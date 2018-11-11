@@ -1,3 +1,0 @@
-[submodule "volumes/metavolcano-front"]
-	path = volumes/metavolcano-front
-	url = https://gitlab.com/integrativebioinformatics/frontend/metavolcano.git
