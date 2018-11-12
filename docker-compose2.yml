@@ -1,0 +1,29 @@
+version: "3.4"
+
+services:
+
+    nginx_rnamining:
+        build: ./build/nginx
+        ports:
+            - "80:80"
+        container_name: rnamining_webserver
+        volumes:
+            - ./volumes/rnamining-front:${DOCUMENT_ROOT}
+        depends_on:
+            - php_rnamining
+        networks:
+            - php
+        restart: always
+
+    php_rnamining:
+        build: ./build/php
+        container_name: rnamining_php
+        volumes:
+         
+            - ./volumes/rnamining-front:${DOCUMENT_ROOT}
+        networks:
+             - php
+        restart: always
+
+networks:
+    php:
