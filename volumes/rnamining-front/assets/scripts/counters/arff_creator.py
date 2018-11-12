@@ -1,6 +1,6 @@
 from sys import argv
 import sys
-
+import os
 #call script: python arff_creator.py sequences.fa
 
 def Verification(input_file):
@@ -12,7 +12,8 @@ def Verification(input_file):
 	lastline = lines[-1]
 
 	if((not firstline.startswith('>')) or (lastline.startswith('>'))):
-		sys.exit("The inserted file does not match with the default of fasta file!")
+		sys.exit("Error: The inserted file does not match with the default of fasta file!")
+		
         
 
 

@@ -14,7 +14,7 @@
         <h2 class="text-center portfolio-text">Results</h2>
 
         
-        <a href="../example/allgenes/MDP_scores.tsv" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download result data</button></a> 
+        <a href="../examples/predictions.txt" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download result data</button></a> 
         
         
 	<p> RESULTS </p>

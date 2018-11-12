@@ -31,7 +31,7 @@
 
                 <h3 class="portfolio-text">How to run?</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
-                    <p>Tutorial for command line!</p>
+                    <p>Download the <a href="../examples/RNAmining_standalone.zip">RNAmining.zip</a> file and run the folowing command described in README.md file!</p>
                 </h4>
 
             </div>

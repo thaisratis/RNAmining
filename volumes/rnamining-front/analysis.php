@@ -18,7 +18,7 @@
                 <h2 class="text-center portfolio-text">Upload your files</h2>
                 <div class="container" style="text-align:center;">
                     <h4 class="text-center">Dataset</h4>
-                    <p> <a href='/tutorial'>.zip</a> - <a href='/examples/dataset.zip'>example</a> </p>
+                    <p> <a href='/examples/file.fasta'>.fasta</a> - <a href='/examples/dataset.zip'>examples</a> </p>
                     <img class="img-responsive" style="height:auto;max-width: 100%;margin:0 auto;display:block;padding-bottom:0;" src="../assets/images/Example.png"></img>
                     
                     
@@ -74,7 +74,7 @@
                                     <label>Organisms List:</label>
                                     <select class="form-control" name="organismslist" id="organismslist">
 
-                                        <option selected>All</option>
+                                        <option selected value="all">All</option>
                     					<option value = "arabidopsis_thaliana">Arabidopsis thaliana</option>
                     					<option value = "drosophila_melanogaster">Drosophila melanogaster</option>
                     					<option value = "escherichia_coli">Escherichia coli</option>

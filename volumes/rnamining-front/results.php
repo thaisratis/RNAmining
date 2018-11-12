@@ -3,7 +3,7 @@
 <html>
 <head>
     <?php include("pages/head.php"); ?>
-    <title>Results - MetaVolcano</title>
+    <title>Results - RNAmining</title>
 </head>
 
 <body>
