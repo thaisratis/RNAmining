@@ -23,7 +23,7 @@
                     
                     
                     <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-                        <input id="fastaData" type="file" name="fastaData" class="btn btn-default btn-file center-block dz-clickable" accept=".tsv,.txt,.zip" required style="margin-bottom:2%;width:100%;">
+                        <input id="fastaData" type="file" name="fastaData" class="btn btn-default btn-file center-block dz-clickable" accept=".fasta,.txt,.fa" required style="margin-bottom:2%;width:100%;">
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
                         <div class="progress" data-action="progress">
