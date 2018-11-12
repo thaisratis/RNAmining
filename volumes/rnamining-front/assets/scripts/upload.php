@@ -45,7 +45,7 @@ $_UP['pasta'] = $dir_random . '/';
 $_UP['tamanho'] = 1024 * 1024 * $fileSizeMB; // MB
 
 // Array com as extensões permitidas
-$_UP['extensoes'] = array('txt' ,'tsv' , 'gmt', 'zip');
+$_UP['extensoes'] = array('txt' ,'fasta' , 'fa');
 
 // Array com os tipos de erros de upload do PHP
 $_UP['erros'][0] = "There wasn't any problem";
@@ -157,29 +157,18 @@ class Actions{
 
       case "fasta":
 
-        $nome_final = 'edata.tsv';
+        $nome_final = 'edata.fasta';
         $nome_final_zip = 'edata.zip';
       
       break;
 
-      case "phenotypic":
-
-        $nome_final = 'pdata.tsv';
-      
-      break;
-
-      case "gmt":
-
-        $nome_final = 'pathways.gmt';
-      
-      break;
 
     }
 
     switch ($extensao) {
 
-        case 'tsv':
-        case 'gmt':
+        case 'fasta':
+        case 'fa':
         case 'txt':
 
           $destino = $dirDestino . $nome_final;

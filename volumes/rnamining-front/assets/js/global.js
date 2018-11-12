@@ -3,7 +3,7 @@ var DEBUG = true;
 var maxSizeMB = 20
 var maxSizeUpload = 1024 * 1024 * maxSizeMB ;
 
-var allowExtensionFasta = ["zip","txt","tsv"];
+var allowExtensionFasta = ["fasta","txt","fa"];
 
 var haveError = false;
 var execError = false;
@@ -30,132 +30,6 @@ $(document).ready(function(){
     })
 
 
-	if (uploadFasta){
-            $('#runRNAmining').attr("disabled",false);
-        }
-	
-	else{
-            $('#runRNAmining').attr("disabled",true);
-	}
-   /* 	if (uploadFasta && uploadPhenotypic){
-    		$('#runRNAmining').attr("disabled",false);
-    	}
-
-    	if (listColumns){
-    		$('#param').attr("disabled",false);
-    	} else {
-    		$('#param').attr("disabled",true);
-    	}
-
-    	$('#optradioValue').val("All Genes");
-	});
-
-    $('#pathwaysRB').click(function() {
-    	$('#topPertubedGenes').hide();
-
-    	$('#runRNAmining').attr("disabled",true);
-
-    	if (uploadPhenotypic){
-    		$('#pathwaysGMT').attr("disabled",false);
-    	}
-
-    	if (uploadFasta && uploadPhenotypic && uploadPathways){
-    		$('#runRNAmining').attr("disabled",false);
-    	}
-
-    	$('#optradioValue').val("Pathways");
-	});
-*/
-    // QUALQUER ALTERAÇÃO
-/*	$("#columnFeatureID").change(function(){
-	$("#columnFeatureID, #columnLog2FoldChange, #columnStatistics").change(function(){
-
-		exec.setElement(this.id);
-		var columnName=this.value;
-		var id=$("#exec").val();
-
-		var optioncolumnFeatureID=$("#columnFeatureID").val();
-		var optioncolumnLog2FoldChange=$("#columnLog2FoldChange").val();
-		var optioncolumnStatistics=$("#columnStatistics").val();
-
-		if (exec.getElement() == "columnFeatureID"){
-
-			$("#columnFID").val(optioncolumnFeatureID);
-
-			if ( optioncolumnFeatureID == optioncolumnLog2FoldChange ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in Log2FC",columnName,true);
-			} else if ( optioncolumnFeatureID == optioncolumnStatistics ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in Statistics",columnName,true);
-			}
-		}
-
-		if (exec.getElement() == "columnLog2FoldChange"){
-
-			$("#columnL2FC").val(optioncolumnLog2FoldChange);
-
-			if ( optioncolumnLog2FoldChange == optioncolumnFeatureID ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in FeatureID",columnName,true);
-			} else if ( optioncolumnLog2FoldChange == optioncolumnStatistics ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in Statistics",columnName,true);
-			}
-		}
-
-		if (exec.getElement() == "columnStatistics"){
-
-			$("#columnSTATS").val(optioncolumnStatistics);
-			
-			if ( optioncolumnStatistics == optioncolumnFeatureID ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in FeatureID",columnName,true);
-			} else if ( optioncolumnStatistics == optioncolumnLog2FoldChange ) {
-				return exec.columnFail("\""+columnName+"\" column already selected in Log2FC",columnName,true);
-			}
-		}
-
-		$.ajax({
-			url : "/assets/scripts/verifyColumn.php?column=" + columnName + "&id=" + id + "&element=" + exec.getElement(),
-			type: "POST",
-			processData: false,
-			contentType: false,
-		    data: formData,
-		   	success: function(data){
-		   		if(DEBUG){
-		   			console.info("entry success - fasta");
-		   			console.info(data);
-		   		}
-
-				if (data.error) {
-					exec.columnFail(data.error,columnName);
-				} else if (data.columnDuplicate) {
-					exec.columnFail(data.columnDuplicate,columnName,true);
-				} else if (data.return == "success") {
-					exec.columnSuccess(columnName);
-				}
-		    },
-		    error: function(data){
-		    	if(DEBUG){
-			    	console.info("entry error - fasta");
-			    	console.info(data);
-			    }
-
-		    	if (data.error){
-		    		exec.columnFail(data.error,columnName);
-				}
-		    },
-		    complete: function(data){
-		    	if(DEBUG){
-		    		console.info("entry complete - fasta");
-		    		console.info(data);
-		    		console.info("Erro: " + haveError);
-		    	}
-
-		    	// if not have error
-		    	if (!haveError){
-		    		//exec.columnSuccess();
-		    	}
-		    }
-  		});
-	});
-*/
     // DISABLE OPTION IN EXEC
     $("#runRNAmining").click(function() {
     	$('#fastaData').addClass("disabled");
@@ -163,6 +37,15 @@ $(document).ready(function(){
     	$('#runRNAmining').addClass("disabled");
 		$('#statusExecution').fadeIn();
     });
+
+
+
+    $('input[name=Type]').change(function(){
+ 
+	    $('#coding_type').val( $('input[name=Type]:checked').val() );
+	    console.log($('#coding_type').val());
+	 
+	 });
 
 });
 
@@ -212,7 +95,7 @@ function solveAll(value){
 		switch(type) {
 
 			case "Fasta":
-
+				//console.log("entroou")
 				uploadFasta=true;
 
 				// ALLOW NEW SEND
@@ -220,6 +103,17 @@ function solveAll(value){
 
 			break;
 
+		}
+
+
+		if (uploadFasta){
+	            $('#runRNAmining').removeAttr("disabled");
+	            $('#fasta_sequences').attr("disabled",true);
+	        }
+		
+		else{
+	            $('#runRNAmining').attr("disabled",true);
+	     		$('#fasta_sequences').removeAttr("disabled");
 		}
 
 		progressBar.removeClass('bg-danger');
@@ -261,8 +155,8 @@ function solveAll(value){
 
 		$('#statusExecutionMsg').html("Execução com sucesso!");
 
-//		link = "results.php?opt=" + $("#optcheckedValue").val() + "&id=" + $("#exec").val();
-		link = "results.php?opt=" + "&id=";
+		//link = "results.php?opt=" + $("#optcheckedValue").val() + "&id=" + $("#exec").val();
+		link = "results.php?opt=" + "&id=" + $("#exec").val();
 		window.location.href = link;
 
 	}
@@ -378,7 +272,7 @@ $('#fastaData').change(function(){
 				console.info("Extension NOT FOUND in allow - return: " + allowExtensionFasta.indexOf(extensionFile));
 			}
 
-			exec.msgError("Please, send files with the following extension(s): txt, tsv or zip.");
+			exec.msgError("Please, send files with the following extension(s): txt, fasta or fa");
 			return 1;
 
 		}
@@ -390,7 +284,7 @@ $('#fastaData').change(function(){
 			console.info("File without extension");
 		}
 
-		exec.msgError("File without extension. Please, send files with the following extension(s): txt, tsv or zip.");
+		exec.msgError("File without extension. Please, send files with the following extension(s): txt, fasta or fa.");
 		return 1;
 	}
 
@@ -534,6 +428,7 @@ $('body').on('submit','#formData', function(e){
 		    }
 
 	    	if (!execError){
+
 	    		exec.execSuccess();
 	    	}
 	    }

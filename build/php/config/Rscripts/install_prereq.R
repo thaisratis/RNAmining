@@ -1,8 +1,0 @@
-install.packages('data.table', repos="https://cloud.r-project.org")
-install.packages('dplyr', repos="https://cloud.r-project.org")
-install.packages('devtools', repos="https://cloud.r-project.org")
-library(devtools)
-install_github("hadley/ggplot2")
-install.packages('plotly', repos="https://cloud.r-project.org")
-install.packages('metap', repos="https://cloud.r-project.org")
-install.packages('metafor', repos="https://cloud.r-project.org")

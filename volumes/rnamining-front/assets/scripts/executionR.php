@@ -9,47 +9,27 @@ $PROD = true;
 
 $statusExecution = 0;
 
-$backR = "./metavolcano_run.R";
-$ncores = 20;
-//$collaps = "TRUE";
-$jobname = "job";
+$backR = "./rnamining.py";
+
 $dataDir = "../../data/";
 
 if ($PROD){
     
-    $columnFeatureid = $_REQUEST['columnFID'];
-    $columnLog2fc = $_REQUEST['columnL2FC'];
-    $columnStatistics = $_REQUEST['columnSTATS'];
-
+    #$fastaData = $_REQUEST['fastaData'];
+    #$sequence = $_REQUEST['sequences'];
+    $run_Type = $_REQUEST['coding_type'];
     $organismslist = $_REQUEST['organismslist'];
-
-    // COLUMN STATISTICS
-    //$pcriteria = $_REQUEST['pcriteria'];
     
-    $pvalue = $_REQUEST['pvalue'];
-    $logfc = $_REQUEST['logfc'];
-    $metathr = $_REQUEST['metathr'];
-    $optionCI = $_REQUEST['optcheckedValue'];
-    $metap = "Fisher";
     $execDir = $dataDir . $_REQUEST['exec'];
 
 } else {
 
-    $columnFeatureid = "ID";
-    $columnLog2fc = "logFC";
-    $columnStatistics = "P.Value";
-
-    $organismslist = "Median";
+    #$fastaData = "";
+    #$sequence = $_REQUEST['sequences'];
+    $run_Type = "coding_type";
+    $organismslist = "arabidopsis_thaliana";
     
-    // COLUMN STATISTICS
-    //$pcriteria = "adj.P.Val";
-    
-    $pvalue = 0.25;
-    $logfc = 0.1;
-    $metathr = 0.8;
-    $optionCI = 0;
-    $metap = "Fisher";
-    $execDir = $dataDir . "TESTES";
+    $execDir = $dataDir . "d7d47c58a9b73343e3ec0f01eec79059";
 }
 
 $execLog = $execDir . "/exec.log";
@@ -158,7 +138,10 @@ if ($DEBUG) {
 
 }
 
-$cmd = "Rscript '" . $backR . "' '" . getcwd() . "/" . $execDir . "' '" . $jobname . "' '" . $metathr . "' '" . $columnFeatureid . "' '" . $columnLog2fc . "' '" . $columnStatistics . "' '" . $pvalue . "' '" . $logfc . "' '" . $ncores . "' '" . $metap . "' '" . $organismslist . "' '" . $optionCI . "'";
+#python3 -W ignore rnamining.py -f sequencias_Arabidopsis.txt -organism_name arabidopsis_thaliana -prediction_type coding_prediction
+
+$cmd = "python3 -W ignore '" . $backR. "' -f '" . $execDir . "/edata.fasta" . "' -organism_name '" . $organismslist . "' -prediction_type '" . $run_Type . "' -output_folder '" . $execDir ."'";
+
 
 $process = new BackgroundProcess($cmd);
 $log = $process->run($execLog,$errorLog);
@@ -176,94 +159,42 @@ $returnCat = "";
 // if size != 0 have problem
 if ( filesize($errorLog) ){
 
-    echo $errorLog;
-    exit;
+    exec("cat " . $errorLog,$outputCat,$statusCat);
 
-        //if(isset($returnRScript->error)){
-        if(isset($errorLog)){
-
-            exec("cat " . $errorLog,$outputCat,$statusCat);
-
-            if (isset($outputCat)){
-                foreach ($outputCat as $value) {
-                    $returnCat .= $value . "</br>";
-                }
-            }
-
-            // if cmd exec sucessful
-            if(!$statusCat){
- 
-                $json['error'] = $returnCat;
-                echo json_encode($json);
-                exit; // stop execution script
-
-            }
-
-        } else {
-
-            // get error stdout
-            exec("cat " . $errorLog,$outputCat,$statusCat);
-
-            if (isset($outputCat)){
-                foreach ($outputCat as $value) {
-                    $returnCat .= $value . "</br>";
-                }
-            }
-
-            // if cmd exec sucessful
-            if(!$statusCat){
-
-                    $json['error'] = $returnCat;
-                    echo json_encode($json);
-                    exit; // stop execution script
-            } else {
-
-                    $json['error'] = "Undefined error";
-                    echo json_encode($json);
-                    exit; // stop execution script
-            }
+    if (isset($outputCat)){
+        foreach ($outputCat as $value) {
+            $returnCat .= $value . "</br>";
         }
+    }
+
+    if(!$statusCat){
+        
+        $json['error'] = $returnCat;
+        echo json_encode($json);
+        exit; // stop execution script
+
+    }
 
 // 0 -> execution ok
 } else {
 
-    if ($optionCI) {
+    
 
-        if ( file_exists( $execDir . "/cumdeg_" . $jobname . ".html" ) and file_exists( $execDir . "/degbar_" . $jobname . ".html" ) and file_exists( $execDir . "/randomSummary_" . $jobname . ".html" ) and file_exists( $execDir . "/" . $jobname . ".html" ) and file_exists( $execDir . "/" . $jobname . "_metap.html" ) ){
+        if ( file_exists( $execDir . "/predictions.txt" )){
             //echo '<a href="' . $execDir . '/MDP_scores.tsv" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download result data</button></a>';
-
-            if(Compress($execDir . "/output/", $execDir)){
-                $json['return']="success";
-                echo json_encode($json);
-            }
+            $json['return'] = "success";
+            echo json_encode($json);
 
         } else {
 
 
-            $json['error'] = "For some undefined reason the graphics could not be loaded - CI - Verify disk space";
+            $json['error'] = "predictions file don't exist!";
             echo json_encode($json);
             exit; // stop execution script
         }
 
-    } else {
-
-        if ( file_exists( $execDir . "/cumdeg_" . $jobname . ".html" ) and file_exists( $execDir . "/degbar_" . $jobname . ".html" ) and file_exists( $execDir . "/" . $jobname . ".html" ) and file_exists( $execDir . "/" . $jobname . "_metap.html" ) ){
-            //echo '<a href="' . $execDir . '/MDP_scores.tsv" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download result data</button></a>';
-
-            if(Compress($execDir . "/output/", $execDir)){
-                $json['return']="success";
-                echo json_encode($json);
-            }
-
-        } else {
 
 
-            $json['error'] = "For some undefined reason the graphics could not be loaded - Verify disk space";
-            echo json_encode($json);
-            exit; // stop execution script
-        }
-
-    }
 }
 
 
