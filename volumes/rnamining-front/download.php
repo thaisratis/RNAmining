@@ -31,7 +31,66 @@
 
                 <h3 class="portfolio-text">How to run?</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
-                    <p>Download the <a href="../examples/RNAmining_standalone.zip">RNAmining.zip</a> file and run the folowing command described in README.md file!</p>
+                    <p>Download the <a href="../examples/RNAmining_standalone.zip">RNAmining.zip</a> file and run the folowing command to perform files prediction:</p>
+                </h4>    
+                        <div style="white-space: nowrap; overflow-x: auto;">
+                            <table>
+                                <th>
+                                    python3 rnamining.py -f filename -organism_name organism_name -prediction_type coding_prediction -output_folder output
+                                </th>
+                            </table>
+                        </div>
+                    </br>
+
+                <h4 class="text-justify text-about" style="line-height:30px;">        
+                    <p>To train novel models run the command below:</p>
+                </h4>
+                        <div style="white-space: nowrap; overflow-x: auto;">
+                            <table>
+                                <th>
+                                    python3 rnamining.py -f filename -out path_to_model -prediction_type coding_prediction -p False
+                                </th>
+                            </table>
+                        </div>
+                     </br>   
+
+                <h4 class="text-justify text-about" style="line-height:30px;">
+                    <p>Run the following command to display all the parameters available to change in RNAmining:</p>
+                </h4>
+                        <div style="white-space: nowrap; overflow-x: auto;">
+                            <table>
+                                <th>
+                                    python3 rnamining.py -h 
+                                </th>
+                            </table>
+                        </div>
+                    </br>    
+
+                <h4 class="text-justify text-about" style="line-height:30px;">
+                    <p>To change the number of filters of the convolutional neural network layers, run the command below:</p>
+                </h4>
+                        <div style="white-space: nowrap; overflow-x: auto;">
+                            <table>
+                                <th>
+                                    python3 rnamining.py -f filename -out path_to_model -prediction_type coding_prediction -p False -num_filters 128
+                                </th>
+                            </table>
+                        </div>                        
+                    </br>
+
+                <h4 class="text-justify text-about" style="line-height:30px;">
+                    <p>To change the kernel size and train each layer with different kernel sizes (e.g. first layer with 3x3 filters and the second one with 5x5 filters) run the following command:</p>
+                </h4>
+                        <div style="white-space: nowrap; overflow-x: auto;">
+                            <table>
+                                <th>
+                                    python3 rnamining.py -f filename -out path_to_model -prediction_type coding_prediction -p False -k 3 5
+                                </th>
+                            </table>
+                        </div>    
+                    </br>
+                <h4 class="text-justify text-about" style="line-height:30px;">
+                    <p>If need more information see the file README.md in the .zip file!</p>                    
                 </h4>
 
             </div>
