@@ -71,7 +71,7 @@ function solveAll(value){
 		return element;
 	}
 
-	this.cleanColumns = function(){
+	/*this.cleanColumns = function(){
 		columnFeatureID=false;
 		columnLog2FoldChange=false;
 		columnStatistics=false;
@@ -86,7 +86,7 @@ function solveAll(value){
 	this.hideColumns = function(){
 		$("#columnsSelect").attr("hidden","true");
 		this.hideAlertsColumns();
-	}
+	}*/
 
 	this.uploadSuccess = function(){
 
@@ -223,9 +223,9 @@ $('#fastaData').change(function(){
 
 	exec.setType("Fasta");
 
-	exec.cleanColumns();
+	//exec.cleanColumns();
 
-	exec.hideColumns();
+	//exec.hideColumns();
 
 	$('#runRNAmining').attr("disabled",true);
 

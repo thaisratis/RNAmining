@@ -45,12 +45,22 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
     ids = arff_creator.take_ids(filename_path)
 
     for i in range(len(predict)):
-        if predict[i]==0:
-            out[i] = ids[i] + '\t coding \n'
+
+        #The last instance
+        if(i==(len(predict)-1)):
+            if predict[i]==0:
+                out[i] = ids[i] + '\t coding'
             
+            else:
+                out[i] = ids[i] + '\t non-coding'
         else:
-            out[i] = ids[i] + '\t non-coding \n'
-            
+            #All instances
+            if predict[i]==0:
+                out[i] = ids[i] + '\t coding\n'
+                
+            else:
+                out[i] = ids[i] + '\t non-coding\n'
+                
     output_file = open(output_folder+'/predictions.txt', 'w')
     output_file.writelines("RNAMining Predictions\n")
     output_file.writelines("Prediction Type: " + prediction_type + '\n')
