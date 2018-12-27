@@ -182,6 +182,15 @@ if ( filesize($errorLog) ){
 
         if ( file_exists( $execDir . "/predictions.txt" )){
             //echo '<a href="' . $execDir . '/MDP_scores.tsv" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download result data</button></a>';
+            $zip = new ZipArchive();
+            $filename = $execDir . '/RNAmining.zip';
+            
+            if($zip->open($filename,ZIPARCHIVE::CREATE) === true){
+                $zip->addFile($execDir . "/predictions.txt");
+                $zip->addFile($execDir . "/codings.txt");
+                $zip->addFile($execDir . "/noncodings.txt");
+            }
+
             $json['return'] = "success";
             echo json_encode($json);
 

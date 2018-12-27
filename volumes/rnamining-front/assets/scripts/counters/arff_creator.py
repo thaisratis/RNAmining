@@ -1,6 +1,8 @@
 from sys import argv
 import sys
 import os
+import re
+from zipfile import ZipFile 
 #call script: python arff_creator.py sequences.fa
 
 def Verification(input_file):
@@ -12,7 +14,7 @@ def Verification(input_file):
 	lastline = lines[-1]
 
 	if((not firstline.startswith('>')) or (lastline.startswith('>'))):
-		sys.exit("Error: The inserted file does not match with the default of fasta file!")
+		sys.exit("Error: The inserted file does not match with the default of fasta file! Check the lines, the header and sequence lines do not match!")
 		
         
 
@@ -85,18 +87,89 @@ def take_ids(filename):
 
 	for line in inputfile:
 		if(line[0] == '>'):
-			if(len(line) > 20):
-				id.append(line[1:20])
-			else:
-				id.append(line[1:-1])
+			#if(len(line) > 20):
+			#	id.append(line[1:20])
+			#else:
+			id.append(line[1:-1])
 
 	return id
 
-#def main():
-#	output_file = open('dl_input.arff', 'w')
-#	header(output_file)
-#	filename = argv[1]
-#	trinucleotides_counts(filename,output_file)
+class RNA:
+	id = ""
+	sequence = ""
+	
+	def __init__(self, id, sequence):
+		self.id = id
+		self.sequence = sequence
+		
+	def setid(self,id):
+		self.id = self
+		
+	def getid(self):
+		return self.id
+		
+	def setsequence(self, sequence):
+		self.sequence = sequence
+		
+	def getsequence(self):
+		return self.sequence
+		
+	def __eq__(self, other):
+		return self.id == other.id
 
 
-#main()
+def loadsequences(filename,prediction,coding_output,nc_output):
+	
+	listcodingRNA = []
+	listncRNA = []
+	tempid = ""
+	tempseq = ""
+
+	with open(filename) as input_data:
+		tempid = input_data.readline() #Read the first id
+
+		#predictionfile = open(prediction, "r")
+
+		#Read the prediction headers
+		for i in range(0,5):
+			prediction.readline()
+
+		for classification in prediction:
+			classification_split = classification.split("\t")
+			sequence_id = classification_split[0]
+			classification_id = classification_split[1]
+
+
+			for line in input_data:
+				if line.startswith(">"):
+
+					if((tempid[1:-1] == sequence_id) and (("non-coding" in classification_id) == True)):
+						listncRNA.append(RNA(tempid,tempseq))
+
+					elif((tempid[1:-1] == sequence_id) and (("non-coding" in classification_id) == False)):
+						listcodingRNA.append(RNA(tempid,tempseq))
+					
+					else:
+						continue;
+					
+					tempid = line
+					tempseq = ""
+					break;
+
+				else:	
+					tempseq += line
+			#add the last one
+
+		if(("non-coding" in classification_id) == True):
+			listncRNA.append(RNA(tempid,tempseq))
+		else:
+			listcodingRNA.append(RNA(tempid,tempseq))
+
+
+	for item in listncRNA:
+		nc_output.writelines("%s%s" % (item.id, item.sequence))
+
+
+	for item in listcodingRNA:
+		coding_output.writelines("%s%s" % (item.id, item.sequence))
+

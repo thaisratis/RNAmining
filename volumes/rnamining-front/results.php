@@ -5,8 +5,8 @@
     <?php include("pages/head.php"); ?>
 
     
-    <script type="text/javascript" src="assets/js/jquery_dataTables.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery_dataTables.min.css">
+    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
 
     
@@ -32,9 +32,23 @@
 
             echo '
 
-                <a href="' . $execDir . '/predictions.txt" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download</button></a></br>
+                <a href="' . $execDir . '/RNAmining.zip" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download All Files</button></a></br>
 
                 ';
+
+            echo '
+
+                <a href="' . $execDir . '/codings.txt" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download Coding Sequences</button></a></br>
+
+                ';
+
+            echo '
+
+                <a href="' . $execDir . '/noncodings.txt" download><button class="btn btn-primary" style="margin-bottom: 30px;">Download Non-coding Sequences</button></a></br>
+
+                ';
+
+
 
         ?>
 

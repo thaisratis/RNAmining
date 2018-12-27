@@ -47,8 +47,8 @@
                     <h4 class="portfolio-text">Execution Options</h4>
                     <input id = "Coding_Prediction" type = "radio" name = "Type" value = "coding_prediction" checked="checked">
     				<label for = "Coding_Prediction"> Coding Potential Prediction </label> &nbsp;&nbsp;&nbsp;&nbsp;
-    				<input id = "ncRNA_Assignation" type = "radio" name = "Type" value = "ncRNA_functional_assignation">
-    				<label for = "ncRNA_Assignation"> RNA Families Assignation </label>
+    				<!--<input id = "ncRNA_Assignation" type = "radio" name = "Type" value = "ncRNA_functional_assignation">
+    				<label for = "ncRNA_Assignation"> RNA Families Assignation </label>!-->
             </div>
         </div>
 
@@ -99,7 +99,7 @@
                         <div id="statusExecution" class="alert" role="warning" hidden>
                             <strong id="statusExecutionMsg"></strong>
                             </br>
-                            <img id="loadingstatusExecution" src="assets/images/loading.gif" style="height:50px;width:auto;display:block;margin: 0 auto;"></img>
+                            <img id="loadingstatusExecution" src="assets/images/load.gif" style="height:50px;width:auto;display:block;margin: 0 auto;"></img>
                         </div>
                     </div>
 
@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12" style="text-align:center;">
-                        <p> Example of results are made available <a href="/pages/example">here</a>.</p>
+                        <p> Example of results are made available <a href="results.php?opt=&id=73ed70ebb92c33a4876e0ed274c2c819">here</a>.</p>
                     </div>
                 </div>
                     

@@ -32,6 +32,8 @@ def process_inputfile(filename, organism_name):
     os.remove(out)
 
     return X
+
+
 def process_outputfile(filename_path, predict, organism_name, prediction_type, output_folder):
     """
         Description: function that generates the output file. First, it converts the predict classes so that the predictions
@@ -67,6 +69,22 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
     output_file.writelines("Name of the Organism: " + organism_name + '\n')
     output_file.writelines("Sequence ID \t Predictions:\n\n")
     output_file.writelines(out)
+
+    #Create a file to Coding Sequences and Non-Coding Sequences
+    coding_output_file = open(output_folder+'/codings.txt', 'w')
+    nc_output_file = open(output_folder+'/noncodings.txt', 'w')
+
+    classification_file = open(output_folder+'/predictions.txt', 'r')
+
+    arff_creator.loadsequences(filename_path,classification_file,coding_output_file,nc_output_file)
+    
+    coding_output_file.close()
+    nc_output_file.close()
+    fasta_sequence.close()
+    classification_file.close()
+
+    arff_creator.create_zip(output_folder)
+
     #output_file.writelines(out)
     #np.savetxt('predictions.txt',out,delimiter = ",", fmt="%s")
 def predict(filename_path, organism_name, prediction_type, output_folder):

@@ -71,7 +71,7 @@ function solveAll(value){
 		return element;
 	}
 
-	/*this.cleanColumns = function(){
+	this.cleanColumns = function(){
 		columnFeatureID=false;
 		columnLog2FoldChange=false;
 		columnStatistics=false;
@@ -86,7 +86,7 @@ function solveAll(value){
 	this.hideColumns = function(){
 		$("#columnsSelect").attr("hidden","true");
 		this.hideAlertsColumns();
-	}*/
+	}
 
 	this.uploadSuccess = function(){
 
@@ -121,9 +121,9 @@ function solveAll(value){
 		progressBar.html("UPLOAD COMPLETE");
 		progressBar.removeClass('progress-bar-animated');
 
-//		$("#columnsSelect").removeAttr("hidden");
+		$("#columnsSelect").removeAttr("hidden");
 
-//		this.hideAlertsColumns();
+		this.hideAlertsColumns();
 		
 		haveError=false;
 	}
