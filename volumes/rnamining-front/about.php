@@ -27,7 +27,7 @@
 
                 <h3 class="portfolio-text">How does the algorithm used work?</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
-                    <p>Bla bla bla.</p>
+                    <p>The algorithm begins by reading the RNA sequences provided in the uploaded file. Thereafter, it is divided into two main parts: the preprocessing and the prediction. In preprocessing, the algorithm do the tri-nucleotides frequency of each RNA sequence and save the results in a file, which is going to be used as input for the second part. In prediction, since the user provides the organism type (e.g. Escherichia coli), the algorithm selects a specific Deep Learning network architecture trained for this organism and perform the prediction, which is shown in the platform and can be downloaded as a .zip file.</p>
                 </h4>
 
                 <h3 class="portfolio-text">How can RNAmining helps?</h3>

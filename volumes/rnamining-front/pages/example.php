@@ -21,9 +21,9 @@
         <!--<iframe class="fundoIframe" src="../examples/allgenes/plot1.html" width="100%" frameborder="0" style="height: 500px;border-radius: 8px 8px 0 0;"></iframe>
         <iframe class="fundoIframe" src="../examples/allgenes/plot2.html" width="100%" frameborder="0" style="height: 500px;margin-top:-5px;"></iframe>
         <iframe class="fundoIframe" src="../examples/allgenes/plot3.html" width="100%" frameborder="0" style="height: 500px;margin-top:-5px;"></iframe>
-        <iframe class="fundoIframe" src="../examples/allgenes/plot4.html" width="100%" frameborder="0" style="height: 500px;margin-top:-5px; border-radius:0 0 8px 8px"></iframe> --!>
+        <iframe class="fundoIframe" src="../examples/allgenes/plot4.html" width="100%" frameborder="0" style="height: 500px;margin-top:-5px; border-radius:0 0 8px 8px"></iframe> !-->
 
-    </div> <!-- END DIV CONTAINER-FLUID -->
+    </div> <!-- END DIV CONTAINER-FLUID !-->
 
     <footer>
         <?php include("../pages/footer.php"); ?>
