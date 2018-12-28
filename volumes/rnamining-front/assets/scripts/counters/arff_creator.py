@@ -1,8 +1,6 @@
 from sys import argv
 import sys
 import os
-import re
-from zipfile import ZipFile 
 #call script: python arff_creator.py sequences.fa
 
 def Verification(input_file):
@@ -139,6 +137,7 @@ def loadsequences(filename,prediction,coding_output,nc_output):
 			sequence_id = classification_split[0]
 			classification_id = classification_split[1]
 
+			#input_data = open(filename, 'r')
 
 			for line in input_data:
 				if line.startswith(">"):

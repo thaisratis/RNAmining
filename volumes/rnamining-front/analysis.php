@@ -112,7 +112,7 @@
                     </div>
 
                     <div class="col-md-4 col-md-offset-4 col-sm-12 col-xs-12" style="text-align:center;">
-                        <p> Example of results are made available <a href="examples/RNAmining.html">here</a>.</p>
+                        <p> Example of results are made available <a href="/pages/example">here</a>.</p>
                     </div>
                 </div>
                     

@@ -51,17 +51,17 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
         #The last instance
         if(i==(len(predict)-1)):
             if predict[i]==0:
-                out[i] = ids[i] + '\t coding'
+                out[i] = ids[i] + '\tcoding'
             
             else:
-                out[i] = ids[i] + '\t non-coding'
+                out[i] = ids[i] + '\tnon-coding'
         else:
             #All instances
             if predict[i]==0:
-                out[i] = ids[i] + '\t coding\n'
+                out[i] = ids[i] + '\tcoding\n'
                 
             else:
-                out[i] = ids[i] + '\t non-coding\n'
+                out[i] = ids[i] + '\tnon-coding\n'
                 
     output_file = open(output_folder+'/predictions.txt', 'w')
     output_file.writelines("RNAMining Predictions\n")
@@ -69,6 +69,7 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
     output_file.writelines("Name of the Organism: " + organism_name + '\n')
     output_file.writelines("Sequence ID \t Predictions:\n\n")
     output_file.writelines(out)
+    output_file.close()
 
     #Create a file to Coding Sequences and Non-Coding Sequences
     coding_output_file = open(output_folder+'/codings.txt', 'w')
@@ -80,10 +81,7 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
     
     coding_output_file.close()
     nc_output_file.close()
-    fasta_sequence.close()
     classification_file.close()
-
-    arff_creator.create_zip(output_folder)
 
     #output_file.writelines(out)
     #np.savetxt('predictions.txt',out,delimiter = ",", fmt="%s")
