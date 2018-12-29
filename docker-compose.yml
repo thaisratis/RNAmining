@@ -2,16 +2,35 @@ version: "3.5"
 
 services:
 
+    monitor_traefik:
+        image: traefik:alpine
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+            - ./volumes/traefik/traefik.toml:/traefik.toml
+            - ./volumes/traefik/acme.json:/acme.json
+        labels:
+            - "traefik.enable=false"
+            - "traefik.docker.network=proxy"
+        networks:
+            - proxy
+        command: "--docker"
+
     nginx_rnamining:
         build: ./build/nginx
         container_name: rnamining_webserver
         volumes:
             - ./volumes/rnamining-front:${DOCUMENT_ROOT}
+        labels:
+            - "traefik.port=80"
+            - "traefik.docker.network=proxy"
+            - "traefik.frontend.rule=Host:${FQDN}"
         depends_on:
             - php_rnamining
         networks:
-            - gatewayapps_proxy
-            - php
+            - proxy
         restart: always
 
     php_rnamining:
@@ -19,13 +38,14 @@ services:
         container_name: rnamining_php
         volumes:
             - ./volumes/rnamining-front:${DOCUMENT_ROOT}
+        labels:
+            - "traefik.enable=false"
+        depends_on:
+            - monitor_traefik
         networks:
-             - php
-        #environment:
-        #     - REPOSITORY=${REPOSITORY}
-         #    - BRANCH_STABLE=${BRANCH_STABLE}
-          #   - TOKEN=${TOKEN}
+             - proxy
         restart: always
 
 networks:
     php:
+    proxy:
