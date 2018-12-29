@@ -1,0 +1,25 @@
+defaultEntryPoints = ["http", "https"]
+
+[web]
+address = ":8080"
+#  [web.auth.basic]
+#  users = ["admin:$apr1$DZbrUlyq$utNxGfLnb8IjkwIhY7fN91"]
+
+[entryPoints]
+  [entryPoints.http]
+  address = ":80"
+    [entryPoints.http.redirect]
+      entryPoint = "https"
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+
+[acme]
+email = "bruno@startconnect.net.br"
+storage = "acme.json"
+entryPoint = "https"
+onHostRule = true
+onDemand = false
+
+[acme.httpChallenge]
+  entryPoint = "http"
