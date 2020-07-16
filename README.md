@@ -29,14 +29,14 @@ This mode the repositorys the frontend and backend are cloned.
 Create file `.env` in root directory on repository informing enviremont variables, example content:
 
 ```bash
-user@host:~/metavolcano# vim .env
+user@host:~/RNAmining# vim .env
 DOCUMENT_ROOT=/var/www/html
 ```
 
 Define permissions for user `www-data` in directory back/front which will be mounted as volume in container. Because the user may not exist on the host host, we use the gid that is standard on any system. Execute:
 
 ```bash
-user@host:~/metavolcano# chown 33:33 -R volumes/rnamining-front
+user@host:~/RNAmining# chown 33:33 -R volumes/rnamining-front
 ```
 
 ## Execution
@@ -44,7 +44,7 @@ user@host:~/metavolcano# chown 33:33 -R volumes/rnamining-front
 In the root repository, execute the next command:
 
 ```bash
-user@host:~/metavolcano# docker-compose -f docker-compose2.yml up --build -d
+user@host:~/RNAmining# docker-compose -f docker-compose2.yml up --build -d
 ```
 The option `-d` execute containers in background.
 
