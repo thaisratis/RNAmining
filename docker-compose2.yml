@@ -11,8 +11,6 @@ services:
             - ./volumes/rnamining-front:${DOCUMENT_ROOT}
         depends_on:
             - php_rnamining
-        networks:
-            - php
         restart: always
 
     php_rnamining:
@@ -21,9 +19,5 @@ services:
         volumes:
          
             - ./volumes/rnamining-front:${DOCUMENT_ROOT}
-        networks:
-             - php
         restart: always
 
-networks:
-    php:

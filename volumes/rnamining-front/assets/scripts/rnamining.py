@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from sys import argv
 import tensorflow as tf 
-tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from counters import arff_creator
 import argparse
 import os
