@@ -1,12 +1,6 @@
-# MetaVolcano
+# RNAmining
 
-- [Containers](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#containers)
-- [Infrastructure](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#infrastructure)
-- [Requisites](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#requisites)
-- [Installation](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#installation)
-- [Pre-execution](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#pre-execution)
-- [Execution](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#execution)
-- [SSL](https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano#ssl)
+https://gitlab.com/integrativebioinformatics/RNAmining
 
 ## Containers
 
@@ -14,10 +8,6 @@
 - *Backend PHP* - PHP-fpm;
 
 2 Containers.
-
-## Infrastructure
-
-![Infrastructure metavolcano](build/images/infra-metavolcano.jpeg)
 
 ## Requisites
 
@@ -29,7 +19,7 @@
 
 Clone the repository recursively with:
 ```
-user@host:~# git clone --recurse-submodules https://gitlab.com/integrativebioinformatics/infrastructure/metavolcano.git
+user@host:~# git clone https://gitlab.com/integrativebioinformatics/RNAmining.git
 ```
 This mode the repositorys the frontend and backend are cloned.
 
@@ -39,16 +29,14 @@ This mode the repositorys the frontend and backend are cloned.
 Create file `.env` in root directory on repository informing enviremont variables, example content:
 
 ```bash
-user@host:~/metavolcano# cat .env
-REPOSITORY=git@gitlab.com:integrativebioinformatics/frontend/metavolcano-front.git
-BRANCH_STABLE=master
-TOKEN=dEfInEsEcUrItYtOkEnFoRuSeInWeBhOoK
+user@host:~/metavolcano# vim .env
+DOCUMENT_ROOT=/var/www/html
 ```
 
 Define permissions for user `www-data` in directory back/front which will be mounted as volume in container. Because the user may not exist on the host host, we use the gid that is standard on any system. Execute:
 
 ```bash
-user@host:~/metavolcano# chown 33:33 -R volumes/metavolcano-front
+user@host:~/metavolcano# chown 33:33 -R volumes/rnamining-front
 ```
 
 ## Execution
@@ -56,25 +44,8 @@ user@host:~/metavolcano# chown 33:33 -R volumes/metavolcano-front
 In the root repository, execute the next command:
 
 ```bash
-user@host:~/metavolcano# docker-compose up -d
+user@host:~/metavolcano# docker-compose -f docker-compose2.yml up --build -d
 ```
 The option `-d` execute containers in background.
-
-## SSL
-
-Per default, the first execution use no-ssl. Case need use ssl, after execution (with containers running), do following:
-
-```
-user@host:~/metavolcano# docker exec numerico_letsencrypt  bash -c 'certbot certonly --email ${EMAIL_LETS} -a webroot --webroot-path=${DIRETORIO} -d ${FQDN} -d ${DOMAIN} --agree-tos'
-```
-
-OBS.: Use option -d according with need.
-
-After, in projecty directory:
-
-```
-user@host:~/metavolcano# docker-compose restart webserver_metavolcano
-Restarting proxy ... done
-```
 
 Enjoy!
