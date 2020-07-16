@@ -13,7 +13,7 @@ RUN apt-get update \
 
 
 
-RUN pip3 install keras==2.2.3 tensorflow pandas sklearn
+RUN pip3 install keras==2.2.3 tensorflow==1.13.1 pandas sklearn
 
 RUN sed -i '/Using\ TensorFlow\ backend/d' /usr/local/lib/python3.5/dist-packages/keras/backend/__init__.py
 
