@@ -74,13 +74,21 @@
                                     <label>Organisms List:</label>
                                     <select class="form-control" name="organismslist" id="organismslist">
 
-                                        <option selected value="all">All</option>
-                    					<option value = "arabidopsis_thaliana">Arabidopsis thaliana</option>
-                    					<option value = "drosophila_melanogaster">Drosophila melanogaster</option>
-                    					<option value = "escherichia_coli">Escherichia coli</option>
-                                        <option value = "homo_sapiens">Homo sapiens</option>
-					                    <option value = "mus_musculus">Mus musculus</option>
-                                        <option value = "saccharomyces_cerevisiae">Saccharomyces cerevisiae</option>
+                                        <option selected value="Anolis_carolinensis">Anolis carolinensis</option>
+                    					<option value = "Chrysemys_picta_bellii">Chrysemys picta bellii</option>
+                    					<option value = "Crocodylus_porosus">Crocodylus porosus</option>
+                    					<option value = "Danio_rerio">Danio rerio</option>
+                                        <option value = "Eptatretus_burgeri">Eptatretus burgeri</option>
+					                    <option value = "Gallus_gallus">Gallus gallus</option>
+                                        <option value = "Homo_sapiens">Homo sapiens</option>
+                                        <option value = "Latimeria_chalumnae">Latimeria chalumnae</option>
+                                        <option value = "Monodelphis_domestica">Monodelphis domestica</option>
+                                        <option value = "Mus_musculus">Mus musculus</option>
+                                        <option value = "Notechis_scutatus">Notechis scutatus</option>
+                                        <option value = "Ornithorhynchus_anatinus">Ornithorhynchus anatinus</option>
+                                        <option value = "Petromyzon_marinus">Petromyzon marinus</option>
+                                        <option value = "Sphenodon_punctatus">Sphenodon punctatus</option>
+                                        <option value = "Xenopus_tropicalis">Xenopus tropicalis</option>
 
                                     </select>
                                 </div>

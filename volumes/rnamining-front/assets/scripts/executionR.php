@@ -27,7 +27,7 @@ if ($PROD){
     #$fastaData = "";
     #$sequence = $_REQUEST['sequences'];
     $run_Type = "coding_type";
-    $organismslist = "arabidopsis_thaliana";
+    $organismslist = "Anolis_carolinensis";
     
     $execDir = $dataDir . "d7d47c58a9b73343e3ec0f01eec79059";
 }

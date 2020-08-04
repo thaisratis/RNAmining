@@ -1,0 +1,103 @@
+RNAMining Predictions
+Prediction Type: coding_prediction
+Name of the Organism: Eptatretus_burgeri
+Sequence ID 	 Predictions:
+
+at3g03625 ncrna chromosome:TAIR10:3:6217476:6217600:1 gene:AT3G03625 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0015818 description:mirBase gene 	coding
+AT1G20210.1 ncrna chromosome:TAIR10:1:7004514:7004585:1 gene:AT1G20210 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT4G01355.1 ncrna chromosome:TAIR10:4:562561:562634:-1 gene:AT4G01355 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G06873.1 ncrna chromosome:TAIR10:1:12986823:12986908:1 gene:AT1G06873 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT3G03175.1 ncrna chromosome:TAIR10:3:5387184:5387268:1 gene:AT3G03175 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at4g03039 ncrna chromosome:TAIR10:4:1340479:1340656:1 gene:AT4G03039 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005382 description:mirBase gene p_MI0005382	coding
+at5g05505 ncrna chromosome:TAIR10:5:14946671:14947169:-1 gene:AT5G05505 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0019252 description:mirBase gene 	coding
+at1g08783 ncrna chromosome:TAIR10:1:24543740:24544014:-1 gene:AT1G08783 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0017886 description:mirBase gene 	coding
+ATMG00950.1 ncrna chromosome:TAIR10:Mt:254505:254576:-1 gene:ATMG00950 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G08210.1 ncrna chromosome:TAIR10:3:19212620:19212698:-1 gene:AT3G08210 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT2G32110.1 ncrna chromosome:TAIR10:2:13651274:13651348:1 gene:AT2G32110 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G06033.1 ncrna chromosome:TAIR10:1:9316015:9316161:-1 gene:AT1G06033 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT1G28720.1 ncrna chromosome:TAIR10:1:10089437:10089508:1 gene:AT1G28720 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G59415.1 ncrna chromosome:TAIR10:3:21959510:21959580:1 gene:AT3G59415 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G04905.1 ncrna chromosome:TAIR10:3:9227117:9227212:-1 gene:AT3G04905 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT5G32017.1 ncrna chromosome:TAIR10:5:11785055:11785126:1 gene:AT5G32017 gene_biotype:tRNA transcript_biotype:tRNA	coding
+ATCG00930.1 ncrna chromosome:TAIR10:Pt:102801:103601:1 gene:ATCG00930 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G03935.1 ncrna chromosome:TAIR10:1:1008810:1008896:1 gene:AT1G03935 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT1G05433.1 ncrna chromosome:TAIR10:1:6466303:6466371:-1 gene:AT1G05433 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT4G12405.1 ncrna chromosome:TAIR10:4:7341424:7341497:-1 gene:AT4G12405 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G02315.1 ncrna chromosome:TAIR10:5:4866592:4866655:1 gene:AT5G02315 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT4G14345.1 ncrna chromosome:TAIR10:4:8255700:8255771:1 gene:AT4G14345 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G05355.1 ncrna chromosome:TAIR10:3:10329133:10329219:1 gene:AT3G05355 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at2g04935 ncrna chromosome:TAIR10:2:2063848:2064061:1 gene:AT2G04935 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0026810 description:mirBase gene 	coding
+at1g67481 ncrna chromosome:TAIR10:1:25278944:25279207:-1 gene:AT1G67481 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005395 description:mirBase gene p_MI0005395	coding
+AT1G68770.1 ncrna chromosome:TAIR10:1:25829654:25829725:1 gene:AT1G68770 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G08605.1 ncrna chromosome:TAIR10:3:20736781:20736881:-1 gene:AT3G08605 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT3G14855.1 ncrna chromosome:TAIR10:3:4998141:4998212:1 gene:AT3G14855 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G05917.1 ncrna chromosome:TAIR10:1:8756361:8756459:-1 gene:AT1G05917 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at5g41663 ncrna chromosome:TAIR10:5:16660469:16660640:-1 gene:AT5G41663 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0000545 description:mirBase gene p_MI0000545	coding
+AT5G09975.1 ncrna chromosome:TAIR10:5:3118377:3118457:1 gene:AT5G09975 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT3G05715.1 ncrna chromosome:TAIR10:3:11154243:11154343:1 gene:AT3G05715 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at1g52185 ncrna chromosome:TAIR10:1:19430078:19430277:-1 gene:AT1G52185 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001078 description:mirBase gene p_MI0001078	coding
+AT2G07745.1 ncrna chromosome:TAIR10:2:3268801:3268879:1 gene:AT2G07745 gene_biotype:tRNA transcript_biotype:tRNA	coding
+at5g01747 ncrna chromosome:TAIR10:5:287584:287736:1 gene:AT5G01747 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0000198 description:mirBase gene p_MI0000198	coding
+at5g07655 ncrna chromosome:TAIR10:5:20554881:20555053:-1 gene:AT5G07655 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0017883 description:mirBase gene 	coding
+at5g10945 ncrna chromosome:TAIR10:5:3456632:3456749:-1 gene:AT5G10945 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0000181 description:mirBase gene p_MI0000181	coding
+at3g18217 ncrna chromosome:TAIR10:3:6244500:6244716:-1 gene:AT3G18217 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0000186 description:mirBase gene p_MI0000186	coding
+at4g13554 ncrna chromosome:TAIR10:4:7878185:7878561:-1 gene:AT4G13554 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005434 description:mirBase gene p_MI0005434	coding
+at2g47275 ncrna chromosome:TAIR10:2:19415052:19415186:1 gene:AT2G47275 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001072 description:mirBase gene p_MI0001072	coding
+AT1G06467.1 ncrna chromosome:TAIR10:1:11436074:11436272:-1 gene:AT1G06467 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at2g08015 ncrna chromosome:TAIR10:2:10356782:10357163:1 gene:AT2G08015 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0019212 description:mirBase gene 	coding
+AT3G24615.1 ncrna chromosome:TAIR10:3:8979504:8979605:-1 gene:AT3G24615 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT5G58495.1 ncrna chromosome:TAIR10:5:23644711:23644792:1 gene:AT5G58495 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G45715.1 ncrna chromosome:TAIR10:5:18542980:18543051:-1 gene:AT5G45715 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G44286.1 ncrna chromosome:TAIR10:5:17840220:17840304:1 gene:AT5G44286 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at2g39885 ncrna chromosome:TAIR10:2:16652101:16652233:1 gene:AT2G39885 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001003 description:mirBase gene p_MI0001003	coding
+AT1G08347.1 ncrna chromosome:TAIR10:1:22394549:22394634:-1 gene:AT1G08347 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT1G08643.1 ncrna chromosome:TAIR10:1:23701178:23701304:1 gene:AT1G08643 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at5g03305 ncrna chromosome:TAIR10:5:7168870:7168969:1 gene:AT5G03305 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0008305 description:mirBase gene 	coding
+AT1G57410.1 ncrna chromosome:TAIR10:1:21302425:21302509:1 gene:AT1G57410 gene_biotype:tRNA transcript_biotype:tRNA	coding
+at5g62848 ncrna chromosome:TAIR10:5:25230568:25230667:-1 gene:AT5G62848 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001431 description:mirBase gene p_MI0001431	coding
+AT4G05045.1 ncrna chromosome:TAIR10:4:2586717:2586745:-1 gene:AT4G05045 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at1g69792 ncrna chromosome:TAIR10:1:26269979:26270078:-1 gene:AT1G69792 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001010 description:mirBase gene p_MI0001010	coding
+at3g23326 ncrna chromosome:TAIR10:3:8346367:8346656:1 gene:AT3G23326 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005408 description:mirBase gene p_MI0005408	coding
+at4g14811 ncrna chromosome:TAIR10:4:8504141:8504314:-1 gene:AT4G14811 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005110 description:mirBase gene p_MI0005110	coding
+at2g38325 ncrna chromosome:TAIR10:2:16061954:16062060:1 gene:AT2G38325 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001000 description:mirBase gene p_MI0001000	coding
+at1g09687 ncrna chromosome:TAIR10:1:28889375:28889532:1 gene:AT1G09687 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0015817 description:mirBase gene 	coding
+AT5G09515.1 ncrna chromosome:TAIR10:5:26349736:26349786:-1 gene:AT5G09515 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at5g05185 ncrna chromosome:TAIR10:5:13622416:13622838:1 gene:AT5G05185 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0013367 description:mirBase gene 	coding
+AT1G04897.1 ncrna chromosome:TAIR10:1:4006868:4007020:-1 gene:AT1G04897 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT3G12585.1 ncrna chromosome:TAIR10:3:3995097:3995169:-1 gene:AT3G12585 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G18820.1 ncrna chromosome:TAIR10:1:6488655:6488735:1 gene:AT1G18820 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G07335.1 ncrna chromosome:TAIR10:5:19902818:19902970:-1 gene:AT5G07335 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT3G19235.1 ncrna chromosome:TAIR10:3:6663708:6663780:1 gene:AT3G19235 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT2G35747.1 ncrna chromosome:TAIR10:2:15029832:15029911:-1 gene:AT2G35747 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at5g03145 ncrna chromosome:TAIR10:5:6926005:6926446:1 gene:AT5G03145 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0019207 description:mirBase gene 	coding
+at1g07051 ncrna chromosome:TAIR10:1:2165517:2165746:1 gene:AT1G07051 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005410 description:mirBase gene p_MI0005410	coding
+AT5G05385.1 ncrna chromosome:TAIR10:5:14710749:14710848:-1 gene:AT5G05385 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT1G05907.1 ncrna chromosome:TAIR10:1:8756228:8756303:-1 gene:AT1G05907 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+at3g13724 ncrna chromosome:TAIR10:3:4496775:4496965:-1 gene:AT3G13724 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005380 description:mirBase gene p_MI0005380	coding
+at3g48057 ncrna chromosome:TAIR10:3:17742098:17742302:1 gene:AT3G48057 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0005399 description:mirBase gene p_MI0005399	coding
+AT1G43820.1 ncrna chromosome:TAIR10:1:16585705:16585776:-1 gene:AT1G43820 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G40395.1 ncrna chromosome:TAIR10:5:16166180:16166387:-1 gene:AT5G40395 gene_biotype:snRNA transcript_biotype:snRNA	coding
+AT2G07605.1 ncrna chromosome:TAIR10:2:9560355:9560446:1 gene:AT2G07605 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+AT4G39672.1 ncrna chromosome:TAIR10:4:18411265:18411338:1 gene:AT4G39672 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT5G01845.1 ncrna chromosome:TAIR10:5:3522144:3522167:-1 gene:AT5G01845 gene_biotype:snRNA transcript_biotype:snRNA	coding
+at1g06597 ncrna chromosome:TAIR10:1:11786292:11786371:1 gene:AT1G06597 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:MI0019237 description:mirBase gene 	coding
+at2g22668 ncrna chromosome:TAIR10:2:9634957:9635113:-1 gene:AT2G22668 gene_biotype:miRNA transcript_biotype:miRNA gene_symbol:p_MI0001074 description:mirBase gene p_MI0001074	coding
+AT1G09873.1 ncrna chromosome:TAIR10:1:29911424:29911447:-1 gene:AT1G09873 gene_biotype:snoRNA transcript_biotype:snoRNA	coding
+ATCG00110.1 ncrna chromosome:TAIR10:Pt:9590:9661:1 gene:ATCG00110 gene_biotype:tRNA transcript_biotype:tRNA	coding
+AT1G32980.1 cds chromosome:TAIR10:1:11954278:11955362:-1 gene:AT1G32980 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT1G78240.1 cds chromosome:TAIR10:1:29432829:29436674:-1 gene:AT1G78240 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:QUA2 description:Probable pectin methyltransferase QUA2 [Source:UniProtKB/Swiss-Prot;Acc:Q9C9Q8]	non-coding
+AT3G59890.1 cds chromosome:TAIR10:3:22123982:22126630:-1 gene:AT3G59890 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:DAPB2 description:4-hydroxy-tetrahydrodipicolinate reductase 2, chloroplastic [Source:UniProtKB/Swiss-Prot;Acc:Q8LB01]	non-coding
+AT3G02120.1 cds chromosome:TAIR10:3:377025:377713:1 gene:AT3G02120 gene_biotype:protein_coding transcript_biotype:protein_coding	coding
+AT3G13060.3 cds chromosome:TAIR10:3:4180154:4183632:1 gene:AT3G13060 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT3G06690.1 cds chromosome:TAIR10:3:2115426:2116825:-1 gene:AT3G06690 gene_biotype:protein_coding transcript_biotype:protein_coding description:Putative acyl-coenzyme A oxidase At3g06690 [Source:UniProtKB/Swiss-Prot;Acc:P0CZ24]	non-coding
+AT3G46500.5 cds chromosome:TAIR10:3:17120351:17122875:1 gene:AT3G46500 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT1G45180.2 cds chromosome:TAIR10:1:17098482:17101896:1 gene:AT1G45180 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT1G04870.1 cds chromosome:TAIR10:1:1373234:1375742:-1 gene:AT1G04870 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:PRMT10 description:Protein arginine N-methyltransferase PRMT10 [Source:UniProtKB/Swiss-Prot;Acc:Q9MAT5]	non-coding
+AT5G36001.2 cds chromosome:TAIR10:5:14141641:14143168:1 gene:AT5G36001 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT1G51300.3 cds chromosome:TAIR10:1:19014255:19016205:-1 gene:AT1G51300 gene_biotype:protein_coding transcript_biotype:protein_coding	non-coding
+AT5G09820.2 cds chromosome:TAIR10:5:3055618:3057578:-1 gene:AT5G09820 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:PAP7 description:Probable plastid-lipid-associated protein 7, chloroplastic [Source:UniProtKB/Swiss-Prot;Acc:Q5M755]	non-coding
+AT3G01330.1 cds chromosome:TAIR10:3:124319:126876:-1 gene:AT3G01330 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:E2FF description:E2F transcription factor-like E2FF [Source:UniProtKB/Swiss-Prot;Acc:Q8RWL0]	non-coding
+AT5G66720.2 cds chromosome:TAIR10:5:26638807:26640816:-1 gene:AT5G66720 gene_biotype:protein_coding transcript_biotype:protein_coding description:Probable protein phosphatase 2C 80 [Source:UniProtKB/Swiss-Prot;Acc:Q9LVQ8]	non-coding
+AT3G25780.1 cds chromosome:TAIR10:3:9409160:9411090:1 gene:AT3G25780 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:AOC3 description:Allene oxide cyclase 3, chloroplastic [Source:UniProtKB/Swiss-Prot;Acc:Q9LS01]	non-coding
+AT3G22460.2 cds chromosome:TAIR10:3:7963855:7964769:1 gene:AT3G22460 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:OASA2 description:Putative inactive cysteine synthase 2 [Source:UniProtKB/Swiss-Prot;Acc:Q9LJA0]	non-coding
+AT4G26750.1 cds chromosome:TAIR10:4:13475617:13478523:-1 gene:AT4G26750 gene_biotype:protein_coding transcript_biotype:protein_coding gene_symbol:LIP5 description:Protein HOMOLOG OF MAMMALIAN LYST-INTERACTING PROTEIN 5 [Source:UniProtKB/Swiss-Prot;Acc:Q9SZ15]	non-coding

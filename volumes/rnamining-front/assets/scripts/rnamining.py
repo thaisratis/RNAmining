@@ -8,6 +8,7 @@ tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from counters import arff_creator
 import argparse
 import os
+import pickle
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
@@ -27,7 +28,12 @@ def process_inputfile(filename, organism_name):
     output_file.close()
     data = arff.loadarff(out)
     data = pd.DataFrame(data[0])
-    X = np.expand_dims(data, 1) 
+    
+    #Normalização do tamanho da sequencia
+    ar = np.array(data)
+    X = ar.astype(int)
+    norm = X.sum(axis=1) * 3
+    X = X / norm[:,np.newaxis]
     
     os.remove(out)
 
@@ -97,10 +103,27 @@ def predict(filename_path, organism_name, prediction_type, output_folder):
 
     try:
         X = process_inputfile(filename_path, organism_name)
-        #print('models/' + prediction_type + '/' + organism_name + '.h5')
-        model = load_model('models/' + prediction_type + '/' + organism_name + '.h5')
-        predict = model.predict_classes(X,verbose=0)
-        process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+        
+        list_organisms = {'h5': ['Danio_rerio', 'Anolis_carolinensis', 'Ornithorhynchus_anatinus', 
+                          'Notechis_scutatus', 'Sphenodon_punctatus'], 
+                          'pkl':['Eptatretus_burgeri',
+                          'Latimeria_chalumnae', 'Petromyzon_marinus', 'Mus_musculus',
+                          'Monodelphis_domestica', 'Homo_sapiens', 'Chrysemys_picta_bellii',
+                          'Crocodylus_porosus', 'Gallus_gallus','Xenopus_tropicalis']}
+        
+        if organism_name in list_organisms.get('h5'):
+            model = load_model('models/' + 'last_version/' + organism_name + '.h5')
+            X = np.expand_dims(X, 1)
+            predict = model.predict_classes(X,verbose=0)
+            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+        elif organism_name in list_organisms.get('pkl'):
+            model = pickle.load(open('models/' + 'last_version/' + organism_name + '.pkl', 'rb'))
+            predict = model.predict(X)
+            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+        else:
+            model = load_model('models/' + prediction_type + '/' + organism_name + '.h5')
+            predict = model.predict_classes(X,verbose=0)
+            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
     except NameError:
         print('Please check if organism_name and prediction_type matches RNAMining documentation.')
 
