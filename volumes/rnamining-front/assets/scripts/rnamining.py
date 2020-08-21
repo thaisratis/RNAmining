@@ -54,17 +54,17 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
         #The last instance
         if(i==(len(predict)-1)):
             if predict[i]==0:
-                out[i] = ids[i] + '\tcoding'
+                out[i] = ids[i] + '\tnon-coding'
             
             else:
-                out[i] = ids[i] + '\tnon-coding'
+                out[i] = ids[i] + '\tcoding'
         else:
             #All instances
             if predict[i]==0:
-                out[i] = ids[i] + '\tcoding\n'
+                out[i] = ids[i] + '\tnon-coding\n'
                 
             else:
-                out[i] = ids[i] + '\tnon-coding\n'
+                out[i] = ids[i] + '\tcoding\n'
                 
     output_file = open(output_folder+'/predictions.txt', 'w')
     output_file.writelines("RNAMining Predictions\n")
