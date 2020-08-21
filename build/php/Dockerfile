@@ -9,13 +9,18 @@ COPY ./config/php.ini /usr/local/etc/php/php.ini
 RUN apt-get update \
     && apt-get install -y vim git gettext \
 			  r-base-core wget \ 
-                          libcurl4-openssl-dev libssl-dev procps python3 python3-pip
+                          libcurl4-openssl-dev libssl-dev procps
 
+# DOWNLOAD SCRIPT ANACONDA
+RUN curl https://repo.anaconda.com/archive/Anaconda3-2020.07-Linux-x86_64.sh --output /opt/Anaconda3-2020.07-Linux-x86_64.sh
+RUN chmod +x /opt/Anaconda3-2020.07-Linux-x86_64.sh
 
+RUN /opt/Anaconda3-2020.07-Linux-x86_64.sh -b -p /usr/local/anaconda3
 
-RUN pip3 install keras==2.2.3 tensorflow==1.13.1 pandas sklearn
+RUN rm /opt/Anaconda3-2020.07-Linux-x86_64.sh
 
-RUN sed -i '/Using\ TensorFlow\ backend/d' /usr/local/lib/python3.5/dist-packages/keras/backend/__init__.py
+RUN /usr/local/anaconda3/bin/conda install -y -c conda-forge xgboost
+
 
 # ZIP
 RUN docker-php-ext-install zip

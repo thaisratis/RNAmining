@@ -1,10 +1,7 @@
-from keras.models import load_model
 from scipy.io import arff
 import numpy as np
 import pandas as pd
 from sys import argv
-import tensorflow as tf 
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 from counters import arff_creator
 import argparse
 import os
@@ -103,27 +100,10 @@ def predict(filename_path, organism_name, prediction_type, output_folder):
 
     try:
         X = process_inputfile(filename_path, organism_name)
-        
-        list_organisms = {'h5': ['Danio_rerio', 'Anolis_carolinensis', 'Ornithorhynchus_anatinus', 
-                          'Notechis_scutatus', 'Sphenodon_punctatus'], 
-                          'pkl':['Eptatretus_burgeri',
-                          'Latimeria_chalumnae', 'Petromyzon_marinus', 'Mus_musculus',
-                          'Monodelphis_domestica', 'Homo_sapiens', 'Chrysemys_picta_bellii',
-                          'Crocodylus_porosus', 'Gallus_gallus','Xenopus_tropicalis']}
-        
-        if organism_name in list_organisms.get('h5'):
-            model = load_model('models/' + 'last_version/' + organism_name + '.h5')
-            X = np.expand_dims(X, 1)
-            predict = model.predict_classes(X,verbose=0)
-            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
-        elif organism_name in list_organisms.get('pkl'):
-            model = pickle.load(open('models/' + 'last_version/' + organism_name + '.pkl', 'rb'))
-            predict = model.predict(X)
-            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
-        else:
-            model = load_model('models/' + prediction_type + '/' + organism_name + '.h5')
-            predict = model.predict_classes(X,verbose=0)
-            process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+        model = pickle.load(open('models/' + 'teste/' + organism_name + '.pkl', 'rb'))
+        predict = model.predict(X)
+        process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+            
     except NameError:
         print('Please check if organism_name and prediction_type matches RNAMining documentation.')
 
@@ -136,5 +116,6 @@ def main():
     args = vars(parser.parse_args())
     
     predict(args['filename'], args['organism_name'], args['prediction_type'], args['output_folder'])
+    
 
 main()

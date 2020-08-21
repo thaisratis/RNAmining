@@ -140,7 +140,7 @@ if ($DEBUG) {
 
 #python3 -W ignore rnamining.py -f sequencias_Arabidopsis.txt -organism_name arabidopsis_thaliana -prediction_type coding_prediction
 
-$cmd = "python3 -W ignore '" . $backR. "' -f '" . $execDir . "/edata.fasta" . "' -organism_name '" . $organismslist . "' -prediction_type '" . $run_Type . "' -output_folder '" . $execDir ."'";
+$cmd = "/usr/local/anaconda3/bin/python3.8 -W ignore '" . $backR. "' -f '" . $execDir . "/edata.fasta" . "' -organism_name '" . $organismslist . "' -prediction_type '" . $run_Type . "' -output_folder '" . $execDir ."'";
 
 
 $process = new BackgroundProcess($cmd);
