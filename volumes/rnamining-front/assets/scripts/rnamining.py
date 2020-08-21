@@ -100,7 +100,7 @@ def predict(filename_path, organism_name, prediction_type, output_folder):
 
     try:
         X = process_inputfile(filename_path, organism_name)
-        model = pickle.load(open('models/' + 'teste/' + organism_name + '.pkl', 'rb'))
+        model = pickle.load(open('models/' + 'coding_prediction/' + organism_name + '.pkl', 'rb'))
         predict = model.predict(X)
         process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
             
