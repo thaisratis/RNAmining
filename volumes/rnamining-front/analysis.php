@@ -27,7 +27,8 @@
                     </div>
                     <div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
                         <div class="progress" data-action="progress">
-                            <div class="progress-bar progress-bar-striped" id="progressBarFasta" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="transition: width 1s;"></div>
+			    <div class="progress-bar progress-bar-striped" id="progressBarFasta" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="transition: width 1s;">
+			   </div>
                         </div>
                     </div>
 
@@ -42,15 +43,15 @@
 		</div>-->
 
 		
-		<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
-            <div id = "Run_Type" name = "Run_Type">
-                    <h4 class="portfolio-text">Execution Options</h4>
-                    <input id = "Coding_Prediction" type = "radio" name = "Type" value = "coding_prediction" checked="checked">
-    				<label for = "Coding_Prediction"> Coding Potential Prediction </label> &nbsp;&nbsp;&nbsp;&nbsp;
-    				<!--<input id = "ncRNA_Assignation" type = "radio" name = "Type" value = "ncRNA_functional_assignation">
-    				<label for = "ncRNA_Assignation"> RNA Families Assignation </label>!-->
-            </div>
-        </div>
+		<!--<div class="col-md-6 col-sm-12 col-xs-12 col-md-offset-3">
+            		<div id = "Run_Type" name = "Run_Type">
+                    		<h4 class="portfolio-text">Execution Options</h4>
+                    			<input id = "Coding_Prediction" type = "radio" name = "Type" value = "coding_prediction" checked="checked">
+    					<label for = "Coding_Prediction"> Coding Potential Prediction </label> &nbsp;&nbsp;&nbsp;&nbsp;
+    					<input id = "ncRNA_Assignation" type = "radio" name = "Type" value = "ncRNA_functional_assignation">
+    					<label for = "ncRNA_Assignation"> RNA Families Assignation </label>
+            		</div>
+        	</div>-->
 
 
                 </div>

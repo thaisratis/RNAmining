@@ -16,7 +16,7 @@
                     <div class="text-box">
                         <p class="intro"></p>
                         <h2>RNAmining</h2>
-                        <h3>A tool for coding potential prediction and non-coding RNA functional assignation</h3>
+                        <h3>A tool for coding potential prediction</h3>
                         <p><a href="/tutorial" class="link-button"><strong>Tutorial</strong></a></p>
                     </div>
                 </div>
@@ -27,7 +27,7 @@
                 </div>
                 
                 <div class="desc">
-                    <p><span class="specialchar">RNAmining</span> is a web tool that allows coding potential prediction and non-coding RNA functional assignation.</p>
+                    <p><span class="specialchar">RNAmining</span> is a web tool that allows coding potential prediction.</p>
                     <!-- <img src="/assets/images/MDP_scheme_front.png" alt="MetaVolcano" class="img-responsive center-block"
                                                                style="width:50%; padding-top: 50px; padding-bottom: 50px"> -->
                     <p>See more <a href="/about">about</a> RNAmining and follow our <a href="/tutorial">tutorial</a> to learn how to use it.</p>
@@ -52,9 +52,9 @@
                     <img height=100 src="../assets/images/Logos/Uchile.png"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <a href="http://bioinfo.imd.ufrn.br/" target="_blank">
                     <img height=95 src="../assets/images/Logos/UFRN.png"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="http://visio.ci.ufpb.br/" target="_blank">
+		<a href="https://aria.ci.ufpb.br/" target="_blank">
                     <img height=100 src="../assets/images/Logos/UFPB.png"/></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="http://visio.ci.ufpb.br/" target="_blank">
+		<a href="https://www.accdis.cl/" target="_blank">
                     <img height=100 src="../assets/images/Logos/Accdis.png"/></a>
 
 

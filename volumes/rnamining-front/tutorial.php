@@ -15,17 +15,17 @@
             <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
                 <h3 class="portfolio-text">Sequences Upload</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
-                    <p>A complete tutorial on how to use <span class="specialchar">RNAmining</span> to perform coding potential prediction and RNA functional assignation is available here. For RNAmining performance, the user has to upload your fasta sequence or paste it in "<strong>Fasta Sequences</strong>" field.</p>
+                    <p>A complete tutorial on how to use <span class="specialchar">RNAmining</span> to perform coding potential prediction is available here. For RNAmining performance, the user has to upload the fasta sequence field.</p>
                 </h4>
 
-                <h3 class="portfolio-text">Execution Options</h3>
+              <!--  <h3 class="portfolio-text">Execution Options</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
                     <p>The user requires to provide which execution type wants. If you want to distinguish coding than non-coding RNA sequences you shouls mark "<strong>Coding Potential Prediction</strong>" option. However, if you want to assign a function to a RNA sequence (i.e. discover its family) you should mark "<strong>RNA Families Assignation</strong>" option.</p>
-                </h4>
+                </h4> -->
 
                 <h3 class="portfolio-text">Organisms</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
-                    <p><span class="specialchar">RNAmining</span> provides a list of specifics organisms already trained in a Deep Learning algorithm. Thus, the user can execute this tool using a model with all organisms or a specific organism model (e.g. if the user dataset is only from specific organisms).</p>
+                    <p><span class="specialchar">RNAmining</span> provides a list of specifics organisms already trained in a machine learning algorithm that the user can use.</p>
                 </h4>
 
             </div>
