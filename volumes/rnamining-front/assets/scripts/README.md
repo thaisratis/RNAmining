@@ -1,6 +1,6 @@
 # RNAMining 
 
-RNAmining is a web tool that allows coding potential prediction and non-coding RNA functional assignation. It takes a user-defined fasta sequences and depending on the user chosen option, it distinguish coding and non-coding sequences or perform the non-coding RNA assignation. The tool performs the predictions using Deep Learning (Convolutional Neural Networks) and this repository contains the implementation using Python and Keras API using the Tensorflow framework.
+RNAmining is a stand-alone and web tool that allows nucleotides coding potential prediction. It only takes a user-defined fasta sequences and the name of the organism the user wants to use as model organism. The tool performs the predictions using XGBoost algorithm and this repository contains the implementation using Python language.
 
 ## How it works
 
@@ -8,12 +8,13 @@ RNAMining is based on four main steps:
 
 1. It receives RNA sequences in a file of a specific organism
 2. It counts the nucleotides frequency of each sequence
-3. It loads a Convolutional Neural Network trained model of the organism.
-4. It returns the predictions of each sequence 
+3. It perfoms a sequences normalization by its lenght
+4. It loads a XGBoost trained model of the organism
+5. It returns the predictions of each sequence 
 
 ## Instructions
 
-First, make sure you have Python 3.6, Pandas, Scikit-learn, Keras and Tensorflow installed. Then, go into scripts folder and run the rnamining.py file. The file can be used to predict new sequences or to train a CNN model. If the fasta file header has more than 20 characters, only the first 20 characters will be displayed in the results file. The file results will be called "predictions.txt".
+First, make sure you have Python 3.8, Pandas, Scikit-learn and Xgboost installed. Then, go into scripts folder and run the rnamining.py file. The file can be used to predict new sequences or to train a new model. The file results will be called "predictions.txt".
 
 ### Predict
 
@@ -22,7 +23,7 @@ To perform prediction, go to therminal and run:
 ```sh
 $ python3 rnamining.py -f filename -organism_name organism_name -prediction_type coding_prediction -output_folder output
 ```
-where: filename is the filename path of the file with RNA sequences to predict, organism_name is the name of the organism (arabidopsis_thaliana, drosophila_melanogaster, escherichia_coli, homo_sapiens, mus_musculus or saccharomyces_cerevisiae) to predict, prediction_type is the type of the prediction (coding_prediction, ncRNA_functional_assignation) and output_folder is the folder where the file results will be saved (make sure that the folder already exists). Please note that RNAMining provides a list of specific organisms trained by the Deep Learning algorithm and it only works for these specific organisms. 
+where: filename is the filename path of the file with RNA sequences to predict, organism_name is the name of the organism (Anolis_carolinensis, Chrysemys_picta_bellii, Crocodylus_porosus, Danio_rerio, Eptatretus_burgeri, Gallus_gallus, Homo_sapiens, Latimeria_chalumnae, Monodelphis_domestica, Mus_musculus, Notechis_scutatus, Ornithorhynchus_anatinus, Petromyzon_marinus, Sphenodon_punctatus, Xenopus_tropicalis) to predict, prediction_type is the type of the prediction which is coding_prediction and output_folder is the folder where the file results will be saved (make sure that the folder already exists). Please note that RNAMining provides a list of specific organisms trained by the XGBoost algorithm and it this option only works for these specific organisms. 
 
 ### Train
 
