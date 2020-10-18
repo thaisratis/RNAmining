@@ -28,6 +28,12 @@
                     <p><span class="specialchar">RNAmining</span> provides a list of specifics organisms already trained in a machine learning algorithm that the user can use.</p>
                 </h4>
 
+                <h3 class="portfolio-text">Execution</h3>
+                <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
+                    <p><span class="specialchar">RNAmining</span> was built to enable easy access to coding potential prediction for non-programming researchers. The tool only require the RNAs nucleotide sequences in FASTA format and the species name option that the user can selected in the Organism section. Then, the user just need to press the RUN RNAmining buttont to perfom the coding potential prediction.</p>
+                </h4>
+
+
             </div>
         </div>
         
