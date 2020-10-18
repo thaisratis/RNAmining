@@ -13,6 +13,13 @@
         <h2 class="text-center portfolio-text">Download</h2>
         <div class="row">
             <div class="col-md-8 col-md-offset-2 col-xs-12 col-sm-12">
+
+                <h3 class="portfolio-text">Used databases</h3>
+                <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
+                    <p><span class="specialchar">RNAmining</span> was validated by a series of tests. all the FASTA sequences used in the creation process of this tool can be downloaded <a href = "../examples/Sequences.zip">here.</a></p>
+                </h4>
+
+
                 <h3 class="portfolio-text">Standalone Version</h3>
                 <h4 class="text-justify text-about" style="line-height:30px;text-indent:50px">
                     <p><span class="specialchar">RNAmining</span> was also developed in a standalone software. A complete tutorial of how to install and use it to perform coding potential prediction and RNA functional assignationis is described below.</p>
@@ -21,11 +28,10 @@
                 <h3 class="portfolio-text">Dependencies</h3>
                 <h4 class="text-justify text-about">
 			<ul style="list-style-type:circle">
-  				<li>Python Version >= 2.7.14</li>
+  				<li>Python Version >= 3.8</li>
 				<li>Pandas Version >= 0.23.3</li>
-				<li>Scikit-learn Version >= 0.19.1</li>
-				<li>Keras Version >= 2.0.0</li>
-				<li>Tensorflow Version >= 1.8.0</li>
+				<li>Scikit-learn Version >= 0.21.3</li>
+				<li>XGBoost Version >= 1.2.0</li>
 			</ul> 
                 </h4>
 
@@ -66,29 +72,7 @@
                         </div>
                     </br>    
 
-                <h4 class="text-justify text-about" style="line-height:30px;">
-                    <p>To change the number of filters of the convolutional neural network layers, run the command below:</p>
-                </h4>
-                        <div style="white-space: nowrap; overflow-x: auto;">
-                            <table>
-                                <th>
-                                    python3 rnamining.py -f filename -out path_to_model -prediction_type coding_prediction -p False -num_filters 128
-                                </th>
-                            </table>
-                        </div>                        
-                    </br>
-
-                <h4 class="text-justify text-about" style="line-height:30px;">
-                    <p>To change the kernel size and train each layer with different kernel sizes (e.g. first layer with 3x3 filters and the second one with 5x5 filters) run the following command:</p>
-                </h4>
-                        <div style="white-space: nowrap; overflow-x: auto;">
-                            <table>
-                                <th>
-                                    python3 rnamining.py -f filename -out path_to_model -prediction_type coding_prediction -p False -k 3 5
-                                </th>
-                            </table>
-                        </div>    
-                    </br>
+               
                 <h4 class="text-justify text-about" style="line-height:30px;">
                     <p>If need more information see the file README.md in the .zip file!</p>                    
                 </h4>
