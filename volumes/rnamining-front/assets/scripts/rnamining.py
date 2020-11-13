@@ -139,13 +139,13 @@ def main():
     parser.add_argument('-prediction_type','--prediction_type', help='The type of the sequence prediction (coding_prediction)', required=True)
     #parser.add_argument('-c','--cod', help='The filename with all the coding sequences if the user wants to train a new model')
     parser.add_argument('-n','--ncod', help='The filename with all the non-coding sequences if the user wants to train a new model')
-    parser.add_argument('-out','--output_filename', help='The output filename with the RNAmining model')
+    parser.add_argument('-out','--output_filename', help='The output path for the RNAmining model')
     parser.add_argument('-output_folder', '--output_folder', help='The output folder with the prediction results',required= True)
     args = vars(parser.parse_args())
     
     
     if args['predict']==True:
-        print('predict')
+        #print('predict')
         predict(args['filename'], args['organism_name'], args['prediction_type'], args['output_folder'])
     else:
         print(args['ncod'])
