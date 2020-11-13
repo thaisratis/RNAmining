@@ -111,7 +111,7 @@ def predict(filename_path, organism_name, prediction_type, output_folder):
     except NameError:
         print('Please check if organism_name and prediction_type matches RNAMining documentation.')
         
-def train(filename_path_cod, filename_path_ncod, output_filename,):
+def train(filename_path_cod, filename_path_ncod, output_filename):
     """
         Description: function to train a XGBOOST model for RNA coding. The function first process the dataset
         reading the arff file, separates the input and its targets and trains a XGBOOST model.
@@ -137,8 +137,8 @@ def main():
     parser.add_argument('-p','--predict', help='Boolean flag to perform predictions. Set True if you want to predict a sequence or false if you want to train', default=True)
     parser.add_argument('-prediction_type','--prediction_type', help='The type of the sequence prediction (coding_prediction)', required=True)
     parser.add_argument('-n','--ncod', help='The filename with all the non-coding sequences if the user wants to train a new model.')
-    parser.add_argument('-out','--output_filename', help='The output path for the RNAmining model')
-    parser.add_argument('-output_folder', '--output_folder', help='The output folder with the prediction results',required= True)
+    parser.add_argument('-out','--output_filename', help='The output path and file name for the RNAmining model')
+    parser.add_argument('-output_folder', '--output_folder', help='The output folder with the prediction results')
     args = vars(parser.parse_args())
     
     
