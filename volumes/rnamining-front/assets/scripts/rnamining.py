@@ -137,7 +137,6 @@ def main():
     parser.add_argument('-organism_name','--organism_name', help='The name of the organism you want to predict/train. Currently, the following organism names are suported in this tool: Anolis carolinensis, Chrysemys picta bellii, Crocodylus porosus, Danio rerio, Eptatretus burgeri, Gallus gallus, Homo sapiens, Latimeria chalumnae, Monodelphis domestica, Mus musculus, Notechis scutatus, Ornithorhynchus anatinus, Petromyzon marinus, Sphenodon punctatus, Xenopus tropicalis', required=True)
     parser.add_argument('-p','--predict', help='Boolean flag to perform predictions. Set True if you want to predict a sequence or false if you want to train', default=True)
     parser.add_argument('-prediction_type','--prediction_type', help='The type of the sequence prediction (coding_prediction)', required=True)
-    #parser.add_argument('-c','--cod', help='The filename with all the coding sequences if the user wants to train a new model')
     parser.add_argument('-n','--ncod', help='The filename with all the non-coding sequences if the user wants to train a new model')
     parser.add_argument('-out','--output_filename', help='The output path for the RNAmining model')
     parser.add_argument('-output_folder', '--output_folder', help='The output folder with the prediction results',required= True)
@@ -145,7 +144,6 @@ def main():
     
     
     if args['predict']==True:
-        #print('predict')
         predict(args['filename'], args['organism_name'], args['prediction_type'], args['output_folder'])
     else:
         print(args['ncod'])
