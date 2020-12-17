@@ -1,11 +1,13 @@
 from sys import argv
 import sys
 import os
+from Bio import SeqIO
+from Bio import Seq
 #call script: python arff_creator.py sequences.fa
 
-def Verification(input_file):
+def Verification(input_verification,output_verification):
 
-	input_file = open(input_file,"r")
+	input_file = open(input_verification,"r")
 	lines = input_file.readlines()
 
 	firstline = lines[0]
@@ -13,8 +15,12 @@ def Verification(input_file):
 
 	if((not firstline.startswith('>')) or (lastline.startswith('>'))):
 		sys.exit("Error: The inserted file does not match with the default of fasta file! Check the lines, the header and sequence lines do not match!")
-		
-        
+			
+	else:
+		for index, record in enumerate(SeqIO.parse(input_verification, "fasta")):
+			seed= record.seq
+			output_verification.writelines(">" + record.description + '\n' + seed + '\n')
+
 
 
 def header(dl_input):
