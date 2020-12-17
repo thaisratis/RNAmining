@@ -1,6 +1,6 @@
 FROM php:7.2.2-fpm
 
-MAINTAINER Bruno Correia <brunogomescorreia@gmail.com>
+MAINTAINER Thaís Ratis <thaisratis@gmail.com>
 
 
 COPY ./config/php.ini /usr/local/etc/php/php.ini
@@ -20,6 +20,8 @@ RUN /opt/Anaconda3-2020.07-Linux-x86_64.sh -b -p /usr/local/anaconda3
 RUN rm /opt/Anaconda3-2020.07-Linux-x86_64.sh
 
 RUN /usr/local/anaconda3/bin/conda install -y -c conda-forge xgboost
+
+RUN /usr/local/anaconda3/bin/conda install -y -c conda-forge biopython
 
 
 # ZIP
