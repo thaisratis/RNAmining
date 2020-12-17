@@ -4,11 +4,11 @@ RNAmining is a stand-alone and web tool that allows nucleotides coding potential
 
 # Dependencies
 
-Python Version >= 3.8
-Pandas Version >= 0.23.3
-Scikit-learn Version >= 0.21.3
-XGBoost Version >= 1.2.0
-Biopython Version >= 1.78
+1. Python Version >= 3.8
+2. Pandas Version >= 0.23.3
+3. Scikit-learn Version >= 0.21.3
+4. XGBoost Version >= 1.2.0
+5. Biopython Version >= 1.78
 
 ## How it works
 
