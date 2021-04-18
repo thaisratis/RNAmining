@@ -48,4 +48,6 @@ user@host:~/RNAmining# docker-compose -f docker-compose2.yml up --build -d
 ```
 The option `-d` execute containers in background.
 
+Cite the code: [![DOI](https://zenodo.org/badge/359168403.svg)](https://zenodo.org/badge/latestdoi/359168403)
+
 Enjoy!
