@@ -31,6 +31,7 @@
                     <!-- <img src="/assets/images/MDP_scheme_front.png" alt="MetaVolcano" class="img-responsive center-block"
                                                                style="width:50%; padding-top: 50px; padding-bottom: 50px"> -->
                     <p>See more <a href="/about">about</a> RNAmining and follow our <a href="/tutorial">tutorial</a> to learn how to use it.</p>
+                    <p>More information about RNAmining in: <a href="https://doi.org/10.12688/f1000research.52350.1">https://doi.org/10.12688/f1000research.52350.1</a></p>
                 </div>
             </div>
         </div>

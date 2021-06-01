@@ -40,7 +40,7 @@ def process_inputfile(filename, organism_name,output_folder):
     return X
 
 
-def process_outputfile(filename_path, predict, organism_name, prediction_type, output_folder):
+def process_outputfile(filename_path, predict, proba, organism_name, prediction_type, output_folder):
     """
         Description: function that generates the output file. First, it converts the predict classes so that the predictions
         with value equal to 1 are renamed to coding and 0 to non-coding. Then, the funciton generates a file with a header for general information
@@ -57,17 +57,21 @@ def process_outputfile(filename_path, predict, organism_name, prediction_type, o
         #The last instance
         if(i==(len(predict)-1)):
             if predict[i]==0:
-                out[i] = ids[i] + '\tnon-coding'
-            
+                out[i] = ids[i] + '\tnon-coding\t'
+
             else:
-                out[i] = ids[i] + '\tcoding'
+                out[i] = ids[i] + '\tcoding\t'
+            out[i] += str(max(proba[i]))
         else:
             #All instances
             if predict[i]==0:
-                out[i] = ids[i] + '\tnon-coding\n'
+                out[i] = ids[i] + '\tnon-coding\t'
                 
             else:
-                out[i] = ids[i] + '\tcoding\n'
+                out[i] = ids[i] + '\tcoding\t'
+            out[i] += str(max(proba[i])) + '\n'
+                
+        
                 
     output_file = open(output_folder+'/predictions.txt', 'w')
     output_file.writelines("RNAMining Predictions\n")
@@ -105,7 +109,8 @@ def predict(filename_path, organism_name, prediction_type, output_folder):
         X = process_inputfile(filename_path, organism_name, output_folder)
         model = pickle.load(open('models/' + 'coding_prediction/' + organism_name + '.pkl', 'rb'))
         predict = model.predict(X)
-        process_outputfile(filename_path, predict, organism_name, prediction_type,output_folder)
+        proba = model.predict_proba(X)
+        process_outputfile(filename_path, predict, proba, organism_name, prediction_type,output_folder)
             
     except NameError:
         print('Please check if organism_name and prediction_type matches RNAMining documentation.')

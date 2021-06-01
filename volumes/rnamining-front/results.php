@@ -5,7 +5,7 @@
     <?php include("pages/head.php"); ?>
 
     
-    <script type="text/javascript" src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
 
@@ -84,8 +84,8 @@
 
                 <?php
                     echo '<thead><tr><th style = "text-align:center;">Sequence ID</th>';
-                    echo '<th style = "text-align:center;">Coding Potential Classification</th></tr></thead>';
-                    
+                    echo '<th style = "text-align:center;">Coding Potential Classification</th>';
+                    echo '<th style = "text-align:center;">Classification Probabilities</th></tr></thead>';
                     echo '<tbody>';
 
                     foreach ($array as $i => $line) {
@@ -96,10 +96,12 @@
 
                             $sequence_id = $exploded[0];
                             $label = $exploded[1];
+                            $probability = $exploded[2];
 
 
                             echo '<tr><td>'.$sequence_id .'</td>';
-                            echo '<td>'.$label .'</td></tr>';
+                            echo '<td>'.$label .'</td>';
+                            echo '<td>'.$probability .'</td></tr>';
                         }
                     }
 
